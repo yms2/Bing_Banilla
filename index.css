@@ -12,49 +12,39 @@ ul,li{
 }
 .wrap{
     width: 100%;
+    height: 3000px;
 }
-/* .header_top{
-    display: flex;
-    width: 100%;
-    height: 896px;
-    background-image: url(./images/section01_bg.png);
-}
-.inner{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%; height: 150px;
-}
-.header_util{
-    display: flex;
-    width: 600px;
-    justify-content: space-around;
-}
-.lang_box{
-    position: absolute;top:66px;
-    display: none;
-    background: white;
-    border-radius: 15px;
-    width: 35px;
-    text-align: center;
-}
-.lang_close{
-    display: block;
-    position: absolute;
-    background: url('./images/lang_btn.png') no-repeat -32px -27px;
-} */
-
 .header_top{
     width: 100%;
     height: 869px;
     background-image: url(./images/section01_bg.png);
 }
-.inner{
+.header_inner{
     display: flex;
     justify-content: space-around;
+    position: absolute;top: 0; left: 0;
     width: 100%;
     height: 150px;
+    background:transparent;
+    z-index: 9999;
 }
+
+
+.header_inner.drop{
+    position: fixed;
+    animation: dropHeader 0.3s;
+    border-bottom: 1px solid #dfebf9;
+    background: white;
+}
+@keyframes dropHeader {
+    0% {
+      top: -869px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+
 .logo{
     display: flex;
     align-items: center;
@@ -94,19 +84,38 @@ ul,li{
 .main{
     display: flex;
     justify-content: center;
+    padding-top: 12rem;
     width: 100%;
 }
 .search{
+    position: relative;
     display: flex;
     justify-content: center;
     margin-top: 45px;
     width: 100%;
 }
 input{
+    position: relative;
     width: 1000px;
     height: 80px;
     border-radius: 55px;
 }
 input:focus{
     outline: none;
+}
+.search_button{
+    position: absolute;
+    right: 485px;
+    top: 15px;
+    width: 170px;
+    height: 60px;
+    background: red;
+    border-radius: 35px;
+    text-align: center;
+    line-height: 60px;
+}
+.search_button a{
+    color: white;
+    font-weight: bolder;
+    letter-spacing: 1px;
 }
